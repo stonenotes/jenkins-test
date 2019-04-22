@@ -1,0 +1,32 @@
+集成erlang
+yum install ncurses-devel
+./configure —prefix=/usr/local/erlang20 —enable-hipe —enable-thread —enable-smp-support —enable-kernel-poll —without-javac
+make && make install
+
+安装rabbitmq
+安装python: yum install python -y
+安装simplejson: yum install xmlto yum install python-simplejson -y
+解压
+
+启动rabbitmq
+1.  ./rabbitmq-server
+2. netstat -nap| grep 5672
+
+下载erlang http://www.erlang.org/downloads  otp_src_21.3.tar.gz
+下载 rabbitmq：https://www.rabbitmq.com/download.html rabbitmq-server-generic-unix-3.7.14.tar.xz
+
+步骤
+1. yum install ncurses-devel
+wget http://erlang.org/download/otp_src_20.0.tar.gz
+2. tar xf otp_src_21.3.tar.gz
+3. ./configure —prefix=/usr/local/erlang20 —without-javac  到otp目录里执行这个命令
+4. 到目录/usr/local/erlang20/bin 下执行 ./erl  查看erlang是否安装成功
+5. 安装依赖 yum install python -y
+6.  yum install xmlto
+7. yum install python-simplejson -y
+8. xz -d  rabbitmq-server-generic-unix-3.7.14.tar.xz
+9. tar xf rabbitmq-server-generic-unix-3.7.14.tar
+10. mv rabbitmq-server-generic-unix-3.7.14  /usr/local/rabbitmq
+11. 启动 /usr/local/rabbitmq/sbin/rabbitmq-server
+
+./configure --prefix=/root/HuDis/HuDis_env/rabbitmq/erlang  --with-ssl  -enable-threads -enable-smmp-support -enable-kernel-poll  --enable-hipe  --without-javac
